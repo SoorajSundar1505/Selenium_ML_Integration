@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite"> 
+  <test name="OrangeHRM">
+  
+    
+ 	<groups>  
+      <run>  
+      	 <include name="Common"/>
+         <include name="SmokeTest"/>  
+      </run>  
+   </groups>  
+   
+   
+    <classes>
+      <class name="Tests.loginTest">
+      
+      <!--  
+      	<methods>
+      		<exclude name = "excludeTest"/>
+      	</methods>
+      -->
+      
+      </class>
+      <class name="Tests.homeTest"/>
+    </classes>
+  </test> <!-- OrangeHRM -->
+</suite> <!-- Suite -->

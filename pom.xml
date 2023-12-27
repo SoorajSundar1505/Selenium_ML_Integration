@@ -7,21 +7,36 @@
     <sourceDirectory>src</sourceDirectory>
     <plugins>
       <plugin>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.8.1</version>
-        <configuration>
-          <release>18</release>
-        </configuration>
-      </plugin>
+		 <artifactId>maven-compiler-plugin</artifactId>
+		 <version>3.12.1</version>
+	  </plugin>
+      
+      <plugin>
+		  <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>3.2.3</version>
+          
+          <configuration>
+                   <suiteXmlFiles>
+                        <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
+                    </suiteXmlFiles> 
+                    <!-- Run Maven Command   mvn test -DsuiteXmlFile=src/test/java/testNGSuiteXML/home.xml -->
+                    <!-- To run parallel test -DsuiteXmlFiles=login.xml,home.xml -Dparallel=methods -DthreadCount=2-->
+                <!-- <parallel>methods</parallel>
+                <threadCount>2</threadCount>-->
+          </configuration>
+	  </plugin>
     </plugins>
   </build>
+  
   <dependencies>
 	  <dependency>
 	    <groupId>org.testng</groupId>
 	    <artifactId>testng</artifactId>
-	    <version>7.8.0</version>
-	    <scope>test</scope>
+	    <version>7.9.0</version>
+	    <scope>compile</scope>
 	</dependency>
+	
 		<dependency>
 	    <groupId>org.seleniumhq.selenium</groupId>
 	    <artifactId>selenium-java</artifactId>
